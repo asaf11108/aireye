@@ -11,6 +11,11 @@ export class RecordsService {
 
   get() {
     return this.apiService.getRecords().pipe(tap(entities => {
+      entities.forEach(entity => {
+        if (!entity.hasOwnProperty('id')) {
+          entity.id = entity.mac;
+        }
+      })
       this.recordsStore.set(entities);
     }));
   }

@@ -1,4 +1,8 @@
+import { RecordsQuery } from './../../state/records.query';
+import { QueryEntity } from '@datorama/akita';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Record } from '../../interfaces/record';
 
 @Component({
   selector: 'app-records',
@@ -7,10 +11,13 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RecordsComponent implements OnInit {
+  records$: Observable<Record[]>
 
-  constructor() { }
-
+  constructor(private recordsQuery: RecordsQuery) {}
+  
+  
   ngOnInit(): void {
+    this.records$ = this.recordsQuery.selectAll();
   }
 
 }

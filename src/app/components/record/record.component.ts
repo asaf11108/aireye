@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Record } from '../../interfaces/record';
 
 @Component({
   selector: 'app-record',
@@ -7,10 +8,12 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RecordComponent implements OnInit {
-
+  @Input() record: Record;
+  recordType = ['help', 'warning', 'computer', 'notifications', 'router'];
   constructor() { }
 
   ngOnInit(): void {
+    this.record.record_type
   }
 
 }

@@ -1,10 +1,10 @@
 .record {
-    display: flex;
+    display: grid;
     align-items: center;
-    justify-content: space-between;
+    grid-template-columns: auto 70px auto 70px 1fr;
     
-    &__timestamp {
-        width: 19ch;
+    &__timestamp--none {
+        visibility: hidden;
     }
 
     &__type {

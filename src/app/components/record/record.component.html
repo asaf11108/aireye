@@ -1,17 +1,22 @@
 <div class="record">
-    <span class="record__timestamp">{{record.timestamp}}</span>
+    <span [ngClass]="{'record__timestamp--none': !record.timestamp}">{{record.timestamp || '0000-00-00 00:00:00'}}</span>
 
+    <div></div>
+    
     <div class="record__type">
         <div></div>
         <button mat-fab color="primary">
-            <mat-icon>{{record.record_type}}</mat-icon>
+            <mat-icon>{{RECORD_TYPES[record.record_type]}}</mat-icon>
         </button>
         <div></div>
     </div>
+    
+    <div></div>
 
     <mat-card class="record__details">
-        <mat-card-title></mat-card-title>
-        <mat-card-content></mat-card-content>
+        <mat-card-content>
+            <p>{{record.record_type}}</p>
+        </mat-card-content>
     </mat-card>
 
 </div>

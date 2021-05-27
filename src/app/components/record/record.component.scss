@@ -1,0 +1,17 @@
+.record {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    &__timestamp {
+        width: 19ch;
+    }
+
+    &__type {
+
+    }
+
+    &__details {
+
+    }
+}

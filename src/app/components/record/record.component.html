@@ -4,18 +4,43 @@
     <div></div>
     
     <div class="record__type">
-        <div></div>
+        <div class="record__vr-dvider"></div>
         <button mat-fab color="primary">
             <mat-icon>{{RECORD_TYPES[record.record_type]}}</mat-icon>
         </button>
-        <div></div>
+        <div class="record__vr-dvider"></div>
     </div>
     
-    <div></div>
+    <div class="record__hr-dvider"></div>
 
     <mat-card class="record__details">
         <mat-card-content>
             <p>{{record.record_type}}</p>
+            <ng-container [ngSwitch]="record.record_type">
+                <ng-container *ngSwitchCase="RecordType.accessPoint">
+                    <p>Device MAC {{record.device_mac}}</p>
+                    <p>Channel {{record.channel}}</p>
+                    <p>Created At {{record.created_at}}></p>
+                </ng-container>
+                <ng-container *ngSwitchCase="RecordType.station">
+                    <p>MAC Address {{record.mac}}</p>
+                    <p>Connected to AP {{record.access_point_ssid}}</p>
+                    <p>Group {{record.group.name}}</p>
+                </ng-container>
+                <ng-container *ngSwitchCase="RecordType.alert">
+                    <p>Severity {{record.severity}}</p>
+                    <p>Subject {{record.ssid}}</p>
+                    <p>Access Point {{record.devices}}</p>
+                </ng-container>
+                <ng-container *ngSwitchCase="RecordType.event">
+                    <p>Subject {{record.msg}}</p>
+                    <p>SSID {{record.ssid_mac}}</p>
+                    <p>Reporting Devices {{record.reporting_mac}}</p>
+                    <p>Destination {{record.mac2}}</p>
+                </ng-container>
+                
+            </ng-container>
+            
         </mat-card-content>
     </mat-card>
 

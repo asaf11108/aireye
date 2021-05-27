@@ -1,17 +1,27 @@
+$border-divider: 1px dashed white;
+
 .record {
     display: grid;
     align-items: center;
     grid-template-columns: auto 70px auto 70px 1fr;
-    
+
     &__timestamp--none {
         visibility: hidden;
     }
 
     &__type {
-
     }
 
-    &__details {
+    &__vr-dvider {
+        border-left: $border-divider;
+    }
 
+    &__hr-dvider {
+        border-top: $border-divider;
+    }
+
+
+
+    &__details {
     }
 }

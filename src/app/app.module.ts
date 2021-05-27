@@ -9,6 +9,7 @@ import { environment } from '../environments/environment';
 import { RecordsComponent } from './components/records/records.component';
 import { RecordComponent } from './components/record/record.component';
 import { RecordDetailsComponent } from './components/record-details/record-details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { RecordDetailsComponent } from './components/record-details/record-detai
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MaterialModule,
     environment.production ? [] : AkitaNgDevtools.forRoot()
   ],

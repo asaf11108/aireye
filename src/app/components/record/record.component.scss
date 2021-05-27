@@ -10,10 +10,18 @@ $border-divider: 1px dashed white;
     }
 
     &__type {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
     }
 
     &__vr-dvider {
+        flex-grow: 1;
+        margin: 0 auto;
         border-left: $border-divider;
+        &:first-child {
+            transform: translateY(2px);
+        }
     }
 
     &__hr-dvider {
@@ -23,5 +31,6 @@ $border-divider: 1px dashed white;
 
 
     &__details {
+        margin: 20px 0;
     }
 }

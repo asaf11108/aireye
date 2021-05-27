@@ -6,10 +6,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { environment } from '../environments/environment';
+import { RecordsComponent } from './components/records/records.component';
+import { RecordComponent } from './components/record/record.component';
+import { RecordDetailsComponent } from './components/record-details/record-details.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RecordsComponent,
+    RecordComponent,
+    RecordDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -36,6 +36,7 @@
                     <p>Access Point {{record.devices}}</p>
                 </ng-container>
                 <ng-container *ngSwitchCase="RecordType.event">
+                    <span class="record__count">{{record.count}}</span>
                     <p>Subject {{record.msg}}</p>
                     <p>SSID {{record.ssid_mac}}</p>
                     <p>Reporting Devices {{record.reporting_mac}}</p>

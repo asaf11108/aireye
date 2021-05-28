@@ -1,4 +1,4 @@
-import { RECORD_TYPES } from './record-type.dico';
+import { RECORD_TYPES } from './record-type.settings';
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { Record } from '../../interfaces/record';
 import { RecordType } from '../../interfaces/record-type';

@@ -1,1 +1,12 @@
-<app-record *ngFor="let record of records$ | async" [record]="record"></app-record>
+<div class="records">
+    <div class="records__filters">
+        <mat-checkbox
+            *ngFor="let filterType of filterTypes"
+            [color]="'primary'"
+            [checked]="filterType.checked"
+            (change)="onFilterClick(filterType, $event.checked)">
+            {{filterType.name}}
+        </mat-checkbox>
+    </div>
+    <app-record *ngFor="let record of records$ | async" [record]="record"></app-record>
+</div>

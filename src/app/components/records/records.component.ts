@@ -1,8 +1,8 @@
 import { RecordsQuery } from './../../state/records.query';
-import { QueryEntity } from '@datorama/akita';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Record } from '../../interfaces/record';
+import { FILTERS_TYPES, FilterType } from './filter-types.settings';
 
 @Component({
   selector: 'app-records',
@@ -11,6 +11,10 @@ import { Record } from '../../interfaces/record';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RecordsComponent implements OnInit {
+  filterTypes = FILTERS_TYPES;
+
+  checkedFilterTypes: string[];
+
   records$: Observable<Record[]>
 
   constructor(private recordsQuery: RecordsQuery) {}
@@ -18,6 +22,19 @@ export class RecordsComponent implements OnInit {
   
   ngOnInit(): void {
     this.records$ = this.recordsQuery.selectAll();
+    this.buildCheckedFilterTypes();
+  }
+
+  onFilterClick(recordTypeFilter: FilterType, checked: boolean) {
+    recordTypeFilter.checked = checked;
+    this.buildCheckedFilterTypes();
+
+  }
+
+  private buildCheckedFilterTypes() {
+    this.checkedFilterTypes = this.filterTypes
+    .filter(recordTypeFilter => recordTypeFilter.checked)
+    .map(recordTypeFilter => recordTypeFilter.value);
   }
 
 }

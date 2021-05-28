@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { RecordsQuery } from './../../state/records.query';
 import { RecordsStore } from './../../state/records.store';
-import { RECORD_TYPES } from './record-type.settings';
+import { RECORD_TYPES } from '../../utils/record-type.settings';
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { Record } from '../../interfaces/record';
 import { RecordType } from '../../interfaces/record-type';

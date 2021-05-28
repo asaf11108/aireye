@@ -23,7 +23,7 @@
                 <ng-container *ngSwitchCase="RecordType.accessPoint">
                     <p>Device MAC {{record.device_mac}}</p>
                     <p>Channel {{record.channel}}</p>
-                    <p>Created At {{record.created_at}}></p>
+                    <p>Created At {{record.created_at}}</p>
                 </ng-container>
                 <ng-container *ngSwitchCase="RecordType.station">
                     <p>MAC Address {{record.mac}}</p>
@@ -41,9 +41,7 @@
                     <p>Reporting Devices {{record.reporting_mac}}</p>
                     <p>Destination {{record.mac2}}</p>
                 </ng-container>
-                
             </ng-container>
-            
         </mat-card-content>
     </mat-card>
 

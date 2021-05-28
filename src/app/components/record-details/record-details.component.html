@@ -1,1 +1,40 @@
-<p>record-details works!</p>
+<div class="record-details" *ngIf="activeRecord$ | async as activeRecord">
+    <mat-card>
+        <mat-card-title>
+            <mat-icon>{{RECORD_TYPES[activeRecord.record_type]}}</mat-icon>
+            <span>{{activeRecord.record_type}} Details</span>
+        </mat-card-title>
+        <mat-card-content>
+            <p>ID #{{activeRecord.id}} {{activeRecord.severity}}</p>
+            <ng-container [ngSwitch]="activeRecord.record_type">
+
+                <ng-container *ngSwitchCase="RecordType.accessPoint">
+                    <p>Whitelist {{activeRecord.white_list}}</p>
+                    <p>Status {{activeRecord.status}}</p>
+                    <p>Is hidden {{activeRecord.is_hidden}}</p>
+                </ng-container>
+
+                <ng-container *ngSwitchCase="RecordType.station">
+                    <p>Noise {{activeRecord.noise}}</p>
+                    <p>First seen {{activeRecord.first_seen}}</p>
+                    <p>Access Point SSID {{activeRecord.access_point_ssid}}</p>
+                </ng-container>
+
+                <ng-container *ngSwitchCase="RecordType.alert">
+                    <p>Type {{activeRecord.type}}</p>
+                    <p>Created time {{activeRecord.create_time}}</p>
+                    <p>BSSID {{activeRecord.bssid}}</p>
+                </ng-container>
+
+                <ng-container *ngSwitchCase="RecordType.event">
+                    <p>Online {{activeRecord.online}}</p>
+                    <p>Version {{activeRecord.version}}</p>
+                    <p>Count {{activeRecord.count}}</p>
+                    <p>Product name {{activeRecord.product_name}}</p>
+                </ng-container>
+
+            </ng-container>
+        </mat-card-content>
+    </mat-card>
+    
+</div>

@@ -13,7 +13,10 @@
     
     <div class="record__hr-dvider"></div>
 
-    <mat-card class="record__details">
+    <mat-card
+        class="record__details"
+        [ngClass]="{'record__details--active': isActive$ | async}"
+        (click)="onRecordClick()">
         <mat-card-content>
             <p>{{record.record_type}}</p>
             <ng-container [ngSwitch]="record.record_type">

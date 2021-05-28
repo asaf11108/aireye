@@ -1,9 +1,12 @@
 .app {
+    .mat-toolbar {
+        margin-bottom: 32px;
+    }
+
     &__main {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        > * {
-            padding: 50px;
-        }
+        gap: 32px;
+        margin: 0 32px;
     }
 }

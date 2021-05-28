@@ -14,3 +14,7 @@ body {
 .hide {
     visibility: hidden;
 }
+
+.mat-checkbox .mat-checkbox-checkmark-path {
+    stroke: white !important;
+}

@@ -5,10 +5,6 @@ $border-divider: 1px dashed white;
     align-items: center;
     grid-template-columns: auto 70px auto 70px 1fr;
 
-    &__timestamp--none {
-        visibility: hidden;
-    }
-
     &__type {
         display: flex;
         align-self: stretch;

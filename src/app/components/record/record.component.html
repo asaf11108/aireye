@@ -1,14 +1,14 @@
 <div class="record">
-    <span [ngClass]="{'record__timestamp--none': !record.timestamp}">{{record.timestamp || '0000-00-00 00:00:00'}}</span>
+    <span [ngClass]="{'hide': !record.timestamp}">{{record.timestamp || '0000-00-00 00:00:00'}}</span>
 
     <div></div>
     
     <div class="record__type">
-        <div class="record__vr-dvider"></div>
+        <div class="record__vr-dvider" [ngClass]="{hide: isFirst}"></div>
         <button mat-fab color="primary">
             <mat-icon>{{RECORD_TYPES[record.record_type]}}</mat-icon>
         </button>
-        <div class="record__vr-dvider"></div>
+        <div class="record__vr-dvider" [ngClass]="{hide: isLast}"></div>
     </div>
     
     <div class="record__hr-dvider"></div>

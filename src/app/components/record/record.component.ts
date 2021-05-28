@@ -18,6 +18,8 @@ export class RecordComponent implements OnInit {
   RecordType = RecordType;
 
   @Input() record: Record;
+  @Input() isFirst = false;
+  @Input() isLast = false;
 
   isActive$: Observable<boolean>;
 

@@ -10,13 +10,15 @@ import { RecordsComponent } from './components/records/records.component';
 import { RecordComponent } from './components/record/record.component';
 import { RecordDetailsComponent } from './components/record-details/record-details.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FilterRecordsPipe } from './pipes/filer-records.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecordsComponent,
     RecordComponent,
-    RecordDetailsComponent
+    RecordDetailsComponent,
+    FilterRecordsPipe
   ],
   imports: [
     BrowserModule,

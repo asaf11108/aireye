@@ -8,12 +8,15 @@
             {{filterType.name}}
         </mat-checkbox>
     </div>
-    <div class="records__wrapper">
-        <app-record 
-            *ngFor="let record of records$ | async | filterRecords:checkedFilterTypes; trackBy: trackByFn; let isFirst = first; let isLast = last"
-            [record]="record"
-            [isFirst]="isFirst"
-            [isLast]="isLast">
-        </app-record>
-    </div>
+    <cdk-virtual-scroll-viewport
+        class="records__wrapper"
+        *ngIf="(records$ | async | filterRecords:checkedFilterTypes) as records"
+        [itemSize]="records.length">
+            <app-record 
+                *cdkVirtualFor="let record of records; trackBy: trackByFn; let isFirst = first; let isLast = last"
+                [record]="record"
+                [isFirst]="isFirst"
+                [isLast]="isLast">
+            </app-record>
+    </cdk-virtual-scroll-viewport>
 </div>

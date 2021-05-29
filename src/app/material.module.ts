@@ -5,6 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 const modules = [
   MatToolbarModule,
@@ -12,7 +13,8 @@ const modules = [
   MatCardModule,
   MatInputModule,
   MatIconModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  ScrollingModule
 ]
 
 @NgModule({

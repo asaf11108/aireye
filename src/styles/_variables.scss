@@ -1,0 +1,7 @@
+@import "~@angular/material/theming";
+
+$aireye-primary: mat-palette($mat-blue);
+$aireye-accent:  mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$aireye-warn:    mat-palette($mat-red);

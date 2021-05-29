@@ -1,3 +1,5 @@
+@import '../../../styles/variables';
+
 $border-divider: 1px dashed white;
 
 .record {
@@ -54,6 +56,6 @@ $border-divider: 1px dashed white;
         right: 0;
         padding: 5px 20px;
         border-radius: 4px;
-        background-color: #7b1fa2;
+        background-color: mat-color($aireye-primary);
     }
 }

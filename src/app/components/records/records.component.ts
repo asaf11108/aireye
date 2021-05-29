@@ -37,4 +37,8 @@ export class RecordsComponent implements OnInit {
     .map(recordTypeFilter => recordTypeFilter.value);
   }
 
+  trackByFn(record: Record): string {
+    return record.id
+  }
+
 }

@@ -16,12 +16,14 @@ export class RecordsComponent implements OnInit {
   checkedFilterTypes: string[];
 
   records$: Observable<Record[]>
+  isActive$: Observable<boolean>;
 
   constructor(private recordsQuery: RecordsQuery) {}
   
   
   ngOnInit(): void {
     this.records$ = this.recordsQuery.selectAll();
+    this.isActive$ = this.recordsQuery.selectActiveId();
     this.buildCheckedFilterTypes();
   }
 

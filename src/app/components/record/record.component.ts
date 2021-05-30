@@ -20,17 +20,15 @@ export class RecordComponent implements OnInit {
   @Input() record: Record;
   @Input() isFirst = false;
   @Input() isLast = false;
+  @Input() isActive: boolean = false;
 
-  isActive$: Observable<boolean>;
 
   constructor(
-    private recordsQuery: RecordsQuery,
     private recordsStore: RecordsStore
     ) { }
 
   ngOnInit(): void {
     this.record.record_type;
-    this.isActive$ = this.recordsQuery.selectActiveId().pipe(map(activeId => activeId === this.record.id));
   }
 
   onRecordClick(): void {

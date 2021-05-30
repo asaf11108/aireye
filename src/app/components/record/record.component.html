@@ -15,7 +15,7 @@
 
     <mat-card
         class="record__details"
-        [ngClass]="{'record__details--active': isActive$ | async, 'record__details--first': isFirst, 'record__details--last': isLast}"
+        [ngClass]="{'record__details--active': isActive, 'record__details--first': isFirst, 'record__details--last': isLast}"
         (click)="onRecordClick()">
         <mat-card-content>
             <p>{{record.record_type}}</p>

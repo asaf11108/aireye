@@ -16,7 +16,8 @@
                 *cdkVirtualFor="let record of records; trackBy: trackByFn; let isFirst = first; let isLast = last"
                 [record]="record"
                 [isFirst]="isFirst"
-                [isLast]="isLast">
+                [isLast]="isLast"
+                [isActive]="(isActive$ | async) === record.id">
             </app-record>
     </cdk-virtual-scroll-viewport>
 </div>

@@ -1,5 +1,5 @@
 <div class="record">
-    <span [ngClass]="{'hide': !record.timestamp}">{{record.timestamp || '0000-00-00 00:00:00'}}</span>
+    <span [ngClass]="{'hide': !record.timestamp}">{{(record.timestamp | date:'yyyy-MM-dd hh:mm:ss') || '0000-00-00 00:00:00'}}</span>
 
     <div></div>
     

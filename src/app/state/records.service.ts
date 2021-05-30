@@ -12,10 +12,13 @@ export class RecordsService {
   }
 
   get(): void {
-    this.http.get<Record[]>(this.ENDPOINT).pipe(tap(entities => {
+    this.http.get<Record[]>(this.ENDPOINT).pipe(tap((entities: Record[]) => {
       entities.forEach(entity => {
         if (!entity.hasOwnProperty('id')) {
           entity.id = entity.mac;
+        }
+        if (entity.timestamp) { 
+          entity.timestamp = new Date(entity.timestamp.replace(' ', 'T')).toISOString();
         }
       })
       this.recordsStore.set(entities);
